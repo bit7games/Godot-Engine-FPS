@@ -6,13 +6,13 @@
 [ext_resource path="res://data/scenes/fade.tscn" type="PackedScene" id=4]
 [ext_resource path="res://data/scenes/barrel.tscn" type="PackedScene" id=5]
 
-[sub_resource type="ProceduralSky" id=7]
+[sub_resource type="ProceduralSky" id=9]
 sun_latitude = 39.24
 sun_curve = 0.246229
 
 [sub_resource type="Environment" id=8]
 background_mode = 2
-background_sky = SubResource( 7 )
+background_sky = SubResource( 9 )
 fog_color = Color( 0.372549, 0.372549, 0.372549, 1 )
 fog_sun_color = Color( 1, 1, 1, 1 )
 tonemap_mode = 2
@@ -56,7 +56,7 @@ extents = Vector3( 250, 1, 250 )
 [node name="post_processing" type="Spatial" parent="."]
 
 [node name="sun" type="DirectionalLight" parent="post_processing"]
-transform = Transform( 0.707107, 0.612372, -0.353553, 0, 0.5, 0.866025, 0.707107, -0.612373, 0.353553, 0, 0, 0 )
+transform = Transform( 0.31977, 0.820555, -0.473748, 0, 0.5, 0.866025, 0.947495, -0.276929, 0.159885, -0.00478458, 15.3419, 0.0516721 )
 light_color = Color( 0.976471, 0.959804, 0.85098, 1 )
 shadow_enabled = true
 directional_shadow_blend_splits = true
@@ -111,3 +111,42 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.23876, 2.67564, 17.051 )
 
 [node name="barrel_4" parent="scenario/props" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2444, 2.67564, 13.7984 )
+
+[node name="barrel_5" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5785, 2.67564, -2.80221 )
+
+[node name="barrel_6" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.9489, 2.67564, 21.2908 )
+
+[node name="barrel_7" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0378, 2.67564, 0.204445 )
+
+[node name="barrel_8" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.3208, 2.67564, 0.204445 )
+
+[node name="barrel_9" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.8987, 2.67564, 37.3221 )
+
+[node name="barrel_10" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.8987, 5.09383, 37.3221 )
+
+[node name="barrel_11" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.8987, 7.60944, 37.3221 )
+
+[node name="barrel_12" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3819, 2.67564, 37.3221 )
+
+[node name="barrel_13" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3819, 5.09383, 37.3221 )
+
+[node name="barrel_14" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3819, 7.60944, 37.3221 )
+
+[node name="barrel_15" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3819, 2.67564, 25.0343 )
+
+[node name="barrel_16" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3819, 5.09383, 25.0343 )
+
+[node name="barrel_17" parent="scenario/props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3819, 7.60944, 25.0343 )

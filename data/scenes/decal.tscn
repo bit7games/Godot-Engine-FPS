@@ -6,9 +6,7 @@
 [sub_resource type="QuadMesh" id=1]
 size = Vector2( 0.3, 0.3 )
 
-[node name="decal" type="Spatial" groups=[
-"decal",
-]]
+[node name="decal" type="Spatial" groups=["decal"]]
 script = ExtResource( 2 )
 timer = NodePath("timer")
 

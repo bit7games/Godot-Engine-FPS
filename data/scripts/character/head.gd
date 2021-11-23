@@ -2,7 +2,7 @@ extends Spatial
 
 export(NodePath) var character;
 
-export var sensibility : float = 0.2;  # Mouse sensitivity
+export var sensibility : float = 0.05;  # Mouse sensitivity
 export var captured : bool = true; # Does not let the mouse leave the screen
 
 func _ready():

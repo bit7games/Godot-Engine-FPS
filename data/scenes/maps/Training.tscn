@@ -1,0 +1,142 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://data/textures/texture_01.svg" type="Texture" id=1]
+[ext_resource path="res://data/scenes/character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://data/textures/texture_01.png" type="Texture" id=3]
+[ext_resource path="res://data/scenes/barrel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://data/scenes/fade.tscn" type="PackedScene" id=5]
+[ext_resource path="res://data/scenes/debug.tscn" type="PackedScene" id=6]
+
+[sub_resource type="ProceduralSky" id=7]
+sun_latitude = 39.24
+sun_curve = 0.246229
+
+[sub_resource type="Environment" id=8]
+background_mode = 2
+background_sky = SubResource( 7 )
+fog_color = Color( 0.372549, 0.372549, 0.372549, 1 )
+fog_sun_color = Color( 1, 1, 1, 1 )
+tonemap_mode = 2
+ss_reflections_enabled = true
+ssao_enabled = true
+ssao_intensity = 6.0
+ssao_quality = 0
+dof_blur_far_distance = 5.0
+dof_blur_far_transition = 50.0
+dof_blur_far_quality = 2
+dof_blur_near_amount = 0.05
+dof_blur_near_quality = 2
+glow_enabled = true
+glow_blend_mode = 1
+glow_bicubic_upscale = true
+adjustment_enabled = true
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[node name="Training" type="Node"]
+
+[node name="post_processing" type="Spatial" parent="."]
+
+[node name="sun" type="DirectionalLight" parent="post_processing"]
+transform = Transform( 0.31977, 0.820555, -0.473748, 0, 0.5, 0.866025, 0.947495, -0.276929, 0.159885, -0.00478458, 15.3419, 0.0516721 )
+light_color = Color( 0.976471, 0.959804, 0.85098, 1 )
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="environment" type="WorldEnvironment" parent="post_processing"]
+environment = SubResource( 8 )
+
+[node name="character" parent="." instance=ExtResource( 2 )]
+
+[node name="debug" parent="." instance=ExtResource( 6 )]
+
+[node name="fade" parent="." instance=ExtResource( 5 )]
+
+[node name="Walls" type="CSGCombiner" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+material_override = SubResource( 3 )
+use_collision = true
+
+[node name="floor" type="CSGMesh" parent="Walls"]
+transform = Transform( 60, 0, 0, 0, 0.2, 0, 0, 0, 120, 0, -0.1, 0 )
+mesh = SubResource( 1 )
+
+[node name="wall_left" type="CSGMesh" parent="Walls"]
+transform = Transform( 0.5, 0, 0, 0, 2, 0, 0, 0, 100, -55, 2, 0 )
+mesh = SubResource( 2 )
+
+[node name="wall_right" type="CSGMesh" parent="Walls"]
+transform = Transform( 0.5, 0, 0, 0, 2, 0, 0, 0, 100, 55, 2, 0 )
+mesh = SubResource( 2 )
+
+[node name="wall_front" type="CSGMesh" parent="Walls"]
+transform = Transform( -2.18557e-08, 0, 60, 0, 2, 0, -0.5, 0, -2.62268e-06, 0, 2, -98 )
+mesh = SubResource( 2 )
+
+[node name="wall_back" type="CSGMesh" parent="Walls"]
+transform = Transform( -2.18557e-08, 0, 60, 0, 2, 0, -0.5, 0, -2.62268e-06, 0, 2, 98 )
+mesh = SubResource( 2 )
+
+[node name="Steps" type="CSGCombiner" parent="." groups=["metal"]]
+transform = Transform( 4, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, -10 )
+material_override = SubResource( 4 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Steps"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CSGBox2" type="CSGBox" parent="Steps"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 2, -2 )
+
+[node name="CSGBox3" type="CSGBox" parent="Steps"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 4, -4 )
+
+[node name="CSGBox4" type="CSGBox" parent="Steps"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 6, -6 )
+
+[node name="CSGBox5" type="CSGBox" parent="Steps"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 8, -8 )
+
+[node name="CSGBox6" type="CSGBox" parent="Steps"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 10, -10 )
+
+[node name="Platforms" type="CSGCombiner" parent="." groups=["grass"]]
+material_override = SubResource( 5 )
+use_collision = true
+
+[node name="platform" type="CSGBox" parent="Platforms"]
+transform = Transform( 20, 0, 0, 0, 0.25, 0, 0, 0, 12, 0, 6, -33 )
+
+[node name="Items" type="Node" parent="."]
+
+[node name="barrel" parent="Items" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.402, 8, -24 )
+
+[node name="barrel2" parent="Items" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.402, 8, -25.9646 )
+
+[node name="barrel3" parent="Items" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8102, 8, -25.058 )
+
+[node name="barrel4" parent="Items" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6307, 8, -39.2435 )
+
+[node name="barrel5" parent="Items" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6307, 10.4714, -39.2435 )
+
+[node name="barrel6" parent="Items" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6307, 12.9251, -39.2435 )
