@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://data/scripts/effects/spark/spark.gd" type="Script" id=2]
+[ext_resource path="res://data/scripts/effects/spark/spark.gd" type="Script" id=1]
 
 [sub_resource type="Curve" id=4]
 _data = [ Vector2( 0.0124224, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
@@ -49,7 +49,7 @@ one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 1 )
 draw_pass_1 = SubResource( 3 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 timer = NodePath("timer")
 
 [node name="timer" type="Timer" parent="."]

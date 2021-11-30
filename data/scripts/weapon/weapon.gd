@@ -88,7 +88,7 @@ class weapon:
 				var main = owner.get_tree().get_root().get_child(0);
 				
 				# Create a instance of trail scene
-				var trail = preload("res://data/scenes/trail.tscn").instance();
+				var trail = preload("res://scenes/trail.tscn").instance();
 				
 				# Change trail position to out of barrel position
 				trail.translation = barrel.global_transform.origin;
@@ -112,7 +112,7 @@ class weapon:
 					
 					if ray.get_collider().is_in_group("prop"):
 						if ray.get_collider().is_in_group("metal"):
-							var spark = preload("res://data/scenes/spark.tscn").instance();
+							var spark = preload("res://scenes/spark.tscn").instance();
 							
 							# Add spark scene in collider
 							ray.get_collider().add_child(spark);
@@ -126,7 +126,7 @@ class weapon:
 							ray.get_collider()._damage(local_damage);
 					
 					# Create a instance of decal scene
-					var decal = preload("res://data/scenes/decal.tscn").instance();
+					var decal = preload("res://scenes/decal.tscn").instance();
 					
 					# Add decal scene in collider
 					ray.get_collider().add_child(decal);

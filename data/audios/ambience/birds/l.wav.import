@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/l.wav-0741adceb0e40a41a43ad39789dec16c.sample"
+
+[deps]
+
+source_file="res://data/audios/ambience/birds/l.wav"
+dest_files=[ "res://.import/l.wav-0741adceb0e40a41a43ad39789dec16c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

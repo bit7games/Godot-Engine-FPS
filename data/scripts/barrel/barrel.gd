@@ -30,7 +30,7 @@ func _explosion() -> void:
 	
 	var main = get_tree().get_root().get_child(0);
 	
-	var burnt_ground = preload("res://data/scenes/burnt_ground.tscn").instance();
+	var burnt_ground = preload("res://scenes/burnt_ground.tscn").instance();
 	main.add_child(burnt_ground);
 	burnt_ground.translation = global_transform.origin;
 	

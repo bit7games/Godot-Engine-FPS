@@ -8,15 +8,25 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "AudioNode",
+"language": "GDScript",
+"path": "res://data/scripts/audio/audio.gd"
+} ]
 _global_script_class_icons={
+"AudioNode": ""
 }
 
 [application]
 
 config/name="Godot Engine FPS"
-run/main_scene="res://data/scenes/main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Audio="*res://scenes/audio.tscn"
 
 [debug]
 

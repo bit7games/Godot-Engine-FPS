@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/g.wav-64937e5e289e2319dc4bcd86749b29c1.sample"
+
+[deps]
+
+source_file="res://data/audios/ambience/birds/g.wav"
+dest_files=[ "res://.import/g.wav-64937e5e289e2319dc4bcd86749b29c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://data/textures/texture_01.svg" type="Texture" id=1]
-[ext_resource path="res://data/scenes/character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://data/textures/texture_01.png" type="Texture" id=3]
-[ext_resource path="res://data/scenes/barrel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://data/scenes/fade.tscn" type="PackedScene" id=5]
-[ext_resource path="res://data/scenes/debug.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/barrel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/fade.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/debug.tscn" type="PackedScene" id=6]
 [ext_resource path="res://data/textures/PNG/Purple/texture_01.png" type="Texture" id=7]
+[ext_resource path="res://scenes/option.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ProceduralSky" id=7]
 sun_latitude = 39.24
@@ -70,6 +71,7 @@ environment = SubResource( 8 )
 [node name="debug" parent="." instance=ExtResource( 6 )]
 
 [node name="fade" parent="." instance=ExtResource( 5 )]
+color = Color( 0.021759, 0.112484, 0.179688, 1 )
 
 [node name="Walls" type="CSGCombiner" parent="." groups=["concrete"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
@@ -152,3 +154,5 @@ material_override = SubResource( 9 )
 use_collision = true
 
 [node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner"]
+
+[node name="Option" parent="." instance=ExtResource( 8 )]

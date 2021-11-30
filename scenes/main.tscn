@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://data/textures/grid.png" type="Texture" id=1]
-[ext_resource path="res://data/scenes/character.tscn" type="PackedScene" id=2]
-[ext_resource path="res://data/scenes/debug.tscn" type="PackedScene" id=3]
-[ext_resource path="res://data/scenes/fade.tscn" type="PackedScene" id=4]
-[ext_resource path="res://data/scenes/barrel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/debug.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/fade.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/barrel.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ProceduralSky" id=9]
 sun_latitude = 39.24
