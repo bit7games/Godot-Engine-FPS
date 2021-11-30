@@ -7,7 +7,7 @@
 
 [sub_resource type="Animation" id=2]
 resource_name = "Day and Night"
-length = 24.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
@@ -16,10 +16,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 24 ),
+"times": PoolRealArray( 0, 12 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -90, 0, 0 ), Vector3( -270, 0, 0 ) ]
+"values": [ Vector3( -90, 0, 0 ), Vector3( 270, 0, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:light_energy")
@@ -28,10 +28,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 2.5, 12 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 3, 9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 2.0, 0.0 ]
+"values": [ 1.0, 0.0, 1.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -60,11 +60,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 15, 0 ) ]
+}
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
 background_color = Color( 0, 0.858824, 1, 1 )
-ambient_light_color = Color( 0.945098, 0.92549, 0.92549, 1 )
+ambient_light_color = Color( 0.337255, 0.72549, 1, 1 )
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -92,10 +104,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:environment:ambient_light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.337255, 0.72549, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:environment:tonemap_exposure")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "day and night"
-length = 24.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:environment:background_color")
@@ -104,28 +140,40 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 12 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0.858824, 1, 1 ), Color( 0.141176, 0.156863, 0.321569, 1 ) ]
+"values": [ Color( 0.337255, 0.72549, 1, 1 ), Color( 0.0705882, 0.0313726, 0.243137, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:environment:ambient_light_energy")
+tracks/1/path = NodePath(".:environment:ambient_light_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 12 ),
+"times": PoolRealArray( 0, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.0, 0.0 ]
+"values": [ Color( 0.337255, 0.72549, 1, 1 ), Color( 0.0705882, 0.0313726, 0.243137, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:environment:tonemap_exposure")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 2.56 ]
 }
 
 [node name="World" type="Spatial"]
 
 [node name="Sun" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.65244, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0 )
 light_energy = 0.0
 shadow_enabled = true
 directional_shadow_blend_splits = true
