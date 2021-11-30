@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://data/materials/YellowGrass.material" type="Material" id=2]
 [ext_resource path="res://scenes/tree.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/SpruceTree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/barrel.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Day and Night"
@@ -200,14 +201,51 @@ use_collision = true
 transform = Transform( 50, 0, 0, 0, 0.1, 0, 0, 0, 50, 0, -1.5, 0 )
 material = ExtResource( 2 )
 
-[node name="Tree" parent="." instance=ExtResource( 3 )]
+[node name="Trees" type="Spatial" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58032, -1.3669, 0 )
 
-[node name="Tree2" parent="." instance=ExtResource( 3 )]
+[node name="Tree2" parent="Trees" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.99468, -1.82604, 10.4966 )
 
-[node name="SpruceTree" parent="." instance=ExtResource( 4 )]
+[node name="SpruceTree" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6407, -1.62638, -13.7694 )
 
-[node name="SpruceTree2" parent="." instance=ExtResource( 4 )]
+[node name="SpruceTree2" parent="Trees" instance=ExtResource( 4 )]
 transform = Transform( 0.979106, -0.0156434, 0.202749, 0, 0.997037, 0.0769278, -0.203351, -0.0753205, 0.976204, -11.9345, -1.62638, -6.01447 )
+
+[node name="Danger" type="Spatial" parent="."]
+
+[node name="barrel" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7779, -0.238706, -11.2528 )
+
+[node name="barrel2" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3218, -0.238706, -11.4995 )
+
+[node name="barrel3" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9167, -0.238706, -9.99469 )
+
+[node name="barrel4" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9274, 2.03872, -10.7855 )
+
+[node name="barrel5" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 0.925369, 0, 0.379069, 0, 1, 0, -0.379069, 0, 0.925369, 13.2836, -0.243476, 2.10539 )
+
+[node name="barrel7" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 0.925369, 0, 0.379069, 0, 1, 0, -0.379069, 0, 0.925369, -16.404, -0.243476, -20.2827 )
+
+[node name="barrel8" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 0.925369, 0, 0.379069, 0, 1, 0, -0.379069, 0, 0.925369, -22.3677, -0.243476, -6.62511 )
+
+[node name="barrel9" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( 0.259922, 0.959742, 0.106474, -0.888115, 0.280885, -0.363808, -0.379069, 0, 0.925369, 20.0694, 0.00349808, 7.07849 )
+
+[node name="barrel10" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( -0.458236, -0.479682, 0.748281, -0.888115, 0.280885, -0.363808, -0.0356685, -0.831269, -0.554724, 20.0694, 0.00349808, 10.2235 )
+
+[node name="barrel11" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( -0.204918, 0.466537, 0.860437, -0.888115, 0.280885, -0.363808, -0.411413, -0.838718, 0.35678, 7.17563, 0.00349808, 10.2235 )
+
+[node name="barrel6" parent="Danger" instance=ExtResource( 5 )]
+transform = Transform( -0.115915, 0.992123, -0.0474836, -0.91808, -0.125264, -0.376083, -0.379069, 0, 0.925369, -4.71062, -0.490097, 2.10539 )
